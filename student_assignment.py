@@ -19,11 +19,11 @@ def hw02_2(q2_pdf):
     chunks = RecursiveCharacterTextSplitter(
         chunk_size=1,
         chunk_overlap=0,
-        is_separator_regex = True,
+        is_separator_regex=True,
         keep_separator=True,
-        separators=[r'第 .+ 條', r'第 .+ 章']
+        separators=[r'第 .+ 條 *\n*', r'第 .+ 章 *\n*']
     ).split_text(content)
     return len(chunks)
 
-print(hw02_1(q1_pdf))
-print(hw02_2(q2_pdf))
+# print(hw02_1(q1_pdf))
+# print(hw02_2(q2_pdf))
